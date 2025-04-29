@@ -50,7 +50,18 @@ function makeSound(key) {
       var tom4 = new Audio("sounds/tom-4.mp3");
       tom4.play();
       break;
+
     default:
       console.log(buttonInnerHTML);
   }
+}
+
+function buttonAnimation(currentKey) {
+  var activeButton = document.querySelector("." + currentKey);
+
+  activeButton.classList.add("pressed");
+
+  setTimeout(function () {
+    activeButton.classList.remove("pressed");
+  }, 100);
 }
